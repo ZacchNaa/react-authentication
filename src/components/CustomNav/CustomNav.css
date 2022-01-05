@@ -1,0 +1,15 @@
+div.nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 0 3rem;
+    margin: 3rem !important;
+}
+
+div.nav a {
+    color: #3c3461;
+    font-weight: bold;
+}
+
+h4.ui.header {
+    margin: 0;
+}

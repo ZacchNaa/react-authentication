@@ -2,11 +2,12 @@ import React, { useRef, useState } from "react";
 import { Alert, Button, Card, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContext";
+import "./Login.css"
 
 const Login = () => {
   // getting inputs
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  const emailRef = useRef("2016.naaz@gmail.com");
+  const passwordRef = useRef('11111111');
 
   // making use of authentication values : signup func
   const { login } = useAuth();
@@ -34,38 +35,63 @@ const Login = () => {
 
   // Component return
   return (
-    <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center md-4">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password" className="w-100 mt-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="w-100 mt-3" type="submit">
-              Log In
-            </Button>
-            <div className="w-100 text-center mt-3">
-              <p>
-                <Link to="/forgot-password">Forgot password?</Link>
-              </p>
-            </div>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        <p>
-          Don't have an account? <Link to="/signup">Sign Up</Link>
-        </p>
-      </div>
-    </>
-  );
+		<>
+			<Card style={{ padding: "4rem" }}>
+				<Card.Body>
+					<h2 className="text-left md-4">devchallenges</h2>
+					<h1 className="text-left md-4">
+						Login
+					</h1>
+					{error && <Alert variant="danger">{error}</Alert>}
+					<Form onSubmit={handleSubmit}>
+						<div class="ui left icon input">
+							<input type="text" placeholder="Email" ref={emailRef} required />
+							<i class="envelope icon"></i>
+						</div>
+						<div class="ui left icon input">
+							<input
+								type="text"
+								placeholder="Password"
+								ref={passwordRef}
+								required
+							/>
+							<i class="lock icon"></i>
+						</div>
+
+						<Button
+							disabled={loading}
+							className="w-100 mt-3 py-3"
+							type="submit">
+							Login
+						</Button>
+						<div className="w-100 text-center text-muted mt-4">
+							<p>or continue with these social profile</p>
+							{/* <p>
+								<Link to="/forgot-password">Forgot password?</Link>
+							</p> */}
+						</div>
+						<div className="w-100 text-center text-muted mt-2 social">
+							<i class="google icon"></i>
+							<i class="facebook icon"></i>
+							<i class="twitter icon"></i>
+							<i class="github icon"></i>
+						</div>
+						<div className="w-100 text-center text-muted mt-2">
+							<p>
+								Don't have an account yet? <Link to="/signup">Register</Link>
+							</p>
+						</div>
+					</Form>
+				</Card.Body>
+			</Card>
+			<div className="w-100 text-center mt-2 createdby">
+				<p>
+					created by <Link to="/signup">username</Link>
+				</p>
+				<p>devChallenges.io</p>
+			</div>
+		</>
+	);
 };
 
 export default Login;

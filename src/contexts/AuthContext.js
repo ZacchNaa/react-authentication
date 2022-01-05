@@ -50,11 +50,11 @@ const AuthProvider = ({ children }) => {
 
   // handling side-effects
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    return auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       setLoading(false);
     });
-    return unsubscribe;
+  
   }, []);
 
   // object of current user
