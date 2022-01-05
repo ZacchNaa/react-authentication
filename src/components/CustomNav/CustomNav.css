@@ -13,3 +13,37 @@ div.nav a {
 h4.ui.header {
     margin: 0;
 }
+
+button.button.drop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 900 !important;
+    border: none;
+    background-color: white;
+}
+
+button.button.drop .userAvatar {
+   margin-right: 1.5rem;
+}
+
+.appToolbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.menuItem {
+    padding: 1rem 2.5rem;
+    font-size: 15px;
+}
+
+li.menuItem i {
+    margin-right: 1rem;
+}
+
+li.menuItem.last {
+    border-top: 1px solid gray;
+    color: red;
+}

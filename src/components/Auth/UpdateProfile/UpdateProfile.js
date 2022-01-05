@@ -10,6 +10,7 @@ const UpdateProfile = (props) => {
 	// getting inputs
 	const emailRef = useRef();
 	const passwordRef = useRef();
+	const imageRef = useRef();
 	const nameRef = useRef();
 	const bioRef = useRef();
 	const phoneRef = useRef();
@@ -70,10 +71,17 @@ const UpdateProfile = (props) => {
 								<h2>Change Info</h2>
 								<p>Changes will be reflected to every services</p>
 								<div className="profile_info">
-									<img src={UserImage} alt="User Image" />
+									{/* <img src={UserImage} alt="User Image" /> */}
 								</div>
 								<Form onSubmit={handleSubmit}>
 									<Form.Group id="email">
+										<Form.Group id="imageConfirm" className="w-100 mt-3">
+											<Form.Control
+												type="file"
+												ref={imageRef}
+												className="imageConfirm"
+											/>
+										</Form.Group>
 										<Form.Group id="nameConfirm" className="w-100 mt-3">
 											<Form.Label>Name</Form.Label>
 											<Form.Control
